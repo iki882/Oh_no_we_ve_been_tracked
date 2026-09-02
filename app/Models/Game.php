@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
     use HasFactory;
 
-    protected $fillablee = [
+    protected $fillable = [
         'title',
         'tagline',
         'teaser_hero',
@@ -19,6 +19,6 @@ class Game extends Model
         'theme',
         'platform',
         'target_audience',
-        'tailer_url',
+        'trailer_url',
     ];
 }

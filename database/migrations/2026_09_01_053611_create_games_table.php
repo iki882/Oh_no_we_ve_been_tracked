@@ -17,13 +17,13 @@ return new class extends Migration
             $table->string('tagline');
             $table->text('teaser_hero');
             $table->text('description');
+            $table->text('objective')->nullable(); // Kolom ini DITAMBAHKAN
             $table->string('genres');
             $table->string('theme');
             $table->string('platform');
             $table->string('target_audience');
             $table->string('trailer_url')->nullable();
-            $table->timestamps();
-            $table->timestamps();
+            $table->timestamps(); // <--- HANYA SATU KALI, tidak boleh double!
         });
     }
 
