@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('icon')->nullable();
             $table->text('description');
-            $table->text(in_game)->nullable();
+            $table->text('in_game')->nullable(); // <-- PERBAIKAN: pakai tanda kutip
             $table->timestamps();
         });
     }
