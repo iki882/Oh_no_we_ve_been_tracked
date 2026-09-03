@@ -41,7 +41,7 @@
             <h1 class="text-5xl font-black uppercase md:text-7xl leading-tight">
                 WE'VE BEEN
                 <span class="text-muted-yellow drop-shadow-[0_0_18px_rgba(212,168,50,0.25)]">
-                    HACKED
+                    HACKED!
                 </span>
             </h1>
 
