@@ -6,21 +6,26 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('team_members', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('role');
-            $table->text('description')->nullable();
-            $table->string('photo')->nullable();
+            $table->string('category'); // gameplay, characters, environment, interface
+            $table->string('title')->nullable();
+            $table->string('image');
             $table->integer('short_order')->default(0);
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('team_members');
+        Schema::dropIfExists('galleries');
     }
 };

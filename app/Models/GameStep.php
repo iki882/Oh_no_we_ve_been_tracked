@@ -2,9 +2,24 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class GameStep extends Model
 {
-    //
+    use HasFactory;
+
+    protected $fillable = [
+        'game_id',
+        'step_number',
+        'title',
+        'description',
+        'icon',
+        'image',
+    ];
+
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
 }
