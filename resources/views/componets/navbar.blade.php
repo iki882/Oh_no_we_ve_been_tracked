@@ -36,7 +36,7 @@
                 <!-- Brand / Logo -->
                 <div class="flex-shrink-0">
                     <a href="#" class="text-sm font-black uppercase tracking-widest text-muted-yellow drop-shadow-[0_0_12px_rgba(212,168,50,0.2)] md:text-base">
-                        WE'VE BEEN <span class="text-white">HACKED</span>
+                        WE'VE BEEN <span class="text-white">HACKED!</span>
                     </a>
                 </div>
 
@@ -47,7 +47,7 @@
                         <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition hover:text-muted-yellow">ABOUT</a>
                         <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition hover:text-muted-yellow">HOW TO PLAY</a>
                         <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition hover:text-muted-yellow">CYBERSECURITY</a>
-                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition hover:text-muted-yellow">GALLERY</a>
+                        <a href="gallery" class="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition hover:text-muted-yellow">GALLERY</a>
                         <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-white/80 transition hover:text-muted-yellow">TEAM</a>
                     </div>
                 </div>
