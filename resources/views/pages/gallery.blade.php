@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Gallery We've Been Hacked</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <script>
-        tailwind.config = {
-            theme:{
-                extend:{
-                    colors:{
-                         navy: '#0b1a33',
-                        'muted-yellow': '#d4a832',
-                        'soft-yellow': '#e8c84a',
-                        'pale-yellow': '#f5e6b0',
-                        'light-blue': '#4a8ecf',
-                        'sky-blue': '#7bb3e0',
-                        'glow-blue': '#3b82f6',
-                    }
-                }
+@section('title', "Gallery - We've Been Hacked")
 
-            }
-        }
-    </script>
-    
-</body>
-</html>
+@section('content')
+
+<section class="min-h-screen bg-[#0b1a33] px-6 py-24 text-white">
+
+    <div class="mx-auto max-w-7xl">
+
+        <h1 class="text-center text-5xl font-black">
+            GAME GALLERY
+        </h1>
+
+        <p class="mt-4 text-center text-gray-400">
+            Take a look inside We've Been Hacked.
+        </p>
+
+    </div>
+
+</section>
+
+@endsection
