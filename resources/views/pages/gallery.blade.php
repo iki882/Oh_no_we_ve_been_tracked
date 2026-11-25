@@ -4,125 +4,104 @@
 
 @section('content')
 
-<section class="min-h-screen bg-[#0b1a33] px-6 py-24 text-white">
+<section
+    class="bg-[#0b1a33] px-6 text-white"
+    style="padding-top:160px; padding-bottom:80px;"
+>
 
-    <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-4xl">
 
         {{-- ================= HEADER ================= --}}
-        <h1 class="text-center text-5xl font-black">
+        <h1 class="text-center text-3xl font-black md:text-4xl text-cyan-300">
             GAME GALLERY
         </h1>
 
-        <p class="mt-4 text-center text-gray-400">
+        <p class="mt-2 text-center text-sm md:text-base font-medium text-gray-300">
             Take a look inside We've Been Hacked.
         </p>
 
-        {{-- ================= SCREENSHOTS ================= --}}
-        <div class="mt-16 rounded-2xl border border-white/10 bg-white/5 p-7">
-            <h2 class="text-2xl font-bold text-cyan-300">In-Game Screenshots</h2>
-            <p class="mt-2 text-sm text-gray-400">
-                Tampilan asli dari dalam game — suasana, environment, dan momen pertarungan.
+        {{-- ================= GAME VIEW INTRO ================= --}}
+        <div class="mt-12 border-b border-white/10 pb-4">
+            <h2 class="text-xl font-bold text-cyan-300">In-Game View</h2>
+            <p class="mt-1 text-sm md:text-base font-medium text-gray-300">
+                Tampilan asli dari dalam game — suasana, environment, dan antarmuka permainan.
             </p>
         </div>
 
-        <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <img
-                src="{{ asset('images/screenshot-1.jpg') }}"
-                alt="Screenshot 1 - We've Been Hacked"
-                class="h-40 w-full rounded-xl border border-white/10 object-cover transition duration-300 hover:border-cyan-400"
-            >
-            <img
-                src="{{ asset('images/screenshot-2.jpg') }}"
-                alt="Screenshot 2 - We've Been Hacked"
-                class="h-40 w-full rounded-xl border border-white/10 object-cover transition duration-300 hover:border-cyan-400"
-            >
-            <img
-                src="{{ asset('images/screenshot-3.jpg') }}"
-                alt="Screenshot 3 - We've Been Hacked"
-                class="h-40 w-full rounded-xl border border-white/10 object-cover transition duration-300 hover:border-cyan-400"
-            >
+        {{-- ================= GAME VIEW CARDS ================= --}}
+        <div class="mt-6 flex flex-col gap-6">
+
+            {{-- Card 1 : Hacking Scene --}}
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center overflow-hidden rounded-xl border border-white/10 bg-white/5 p-4 md:p-5 hover:border-cyan-500/30 transition-all duration-300">
+                
+                {{-- Container Gambar (Ukuran Sedang & Jelas) --}}
+                <div class="md:col-span-5 lg:col-span-4 w-full overflow-hidden rounded-lg border border-white/10 bg-black/40">
+                    <img
+                        src="{{ asset('tampilan.jpeg') }}"
+                        alt="In-Game View 1"
+                        class="w-full aspect-[16/9] object-cover hover:scale-105 transition-transform duration-300"
+                    >
+                </div>
+
+                {{-- Container Deskripsi (Teks Lebih Besar & Semibold) --}}
+                <div class="md:col-span-7 lg:col-span-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg md:text-xl font-bold text-white">Hacking Scene</h3>
+                        <p class="mt-2 text-sm md:text-base font-medium leading-relaxed text-gray-200">
+                            Tampilan asli dari dalam game saat karakter memasuki mode <em class="text-cyan-300 font-semibold">hacking</em> — memperlihatkan antarmuka terminal, jalur data, dan elemen visual bergaya cyberpunk dengan nuansa biru gelap. Di sini pemain harus memecahkan kode sambil menghindari deteksi sistem keamanan.
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <span class="inline-block rounded-full bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 text-xs font-bold tracking-widest text-cyan-300">
+                            GAMEPLAY
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            {{-- Card 2 : System Breach Scene --}}
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center overflow-hidden rounded-xl border border-white/10 bg-white/5 p-4 md:p-5 hover:border-cyan-500/30 transition-all duration-300">
+                
+                {{-- Container Gambar (Ukuran Sedang & Jelas) --}}
+                <div class="md:col-span-5 lg:col-span-4 w-full overflow-hidden rounded-lg border border-white/10 bg-black/40">
+                    <img 
+                        src="{{ asset('tampilan2.jpeg') }}"
+                        alt="In-Game View 2"
+                        class="w-full aspect-[16/9] object-cover hover:scale-105 transition-transform duration-300"
+                    >
+                </div>
+
+                {{-- Container Deskripsi (Teks Lebih Besar & Semibold) --}}
+                <div class="md:col-span-7 lg:col-span-8 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg md:text-xl font-bold text-white">System Breach Scene</h3>
+                        <p class="mt-2 text-sm md:text-base font-medium leading-relaxed text-gray-200">
+                            Tampilan antarmuka <strong class="text-cyan-300 font-semibold">Pilih Level Operasi Siber</strong> untuk game simulasi keamanan siber berbasis kerja sama (<em class="text-cyan-300 font-semibold">co-op/asimetris</em>) ini menyajikan tiga tingkatan kesulitan—mulai dari Level 01 Ancaman Dasar (Easy) yang sudah terbuka, hingga Level 02 Rekayasa Sosial &amp; Phishing (Medium) dan Level 03 Serangan Siber Kritis (Hard) yang masih terkunci—di mana setiap kartu level secara detail menampilkan fokus kasus, target 5 kasus, durasi waktu bermain, serta batas 3 <em class="text-red-400 font-semibold">strikes</em>.
+                        </p>
+                    </div>
+                    <div class="mt-4">
+                        <span class="inline-block rounded-full bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 text-xs font-bold tracking-widest text-cyan-300">
+                            ENVIRONMENT
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-        {{-- ================= MERCHANDISE INTRO ================= --}}
-        <div class="mt-20 rounded-2xl border border-white/10 bg-white/5 p-7">
-            <h2 class="text-2xl font-bold text-cyan-300">Official Merchandise</h2>
-            <p class="mt-2 text-sm text-gray-400">
-                Setiap item merchandise di bawah ini dibuat berdasarkan karakter, simbol, dan elemen visual
-                yang muncul langsung di dalam game. Bukan sekadar gambar acak — semua desainnya punya
-                kaitan cerita dengan karakter-karakter utama.
+        {{-- ================= ABOUT THE GAME ================= --}}
+        <div class="mt-12 rounded-xl border border-white/10 bg-white/5 p-6">
+            <h3 class="text-lg font-bold text-cyan-300">Tentang We've Been Hacked</h3>
+            <p class="mt-2 text-sm md:text-base font-medium leading-relaxed text-gray-200">
+                <strong class="text-cyan-300 font-semibold">We've Been Hacked</strong> adalah game bertema cyber
+                security di mana pemain berperan sebagai Engineer dari divisi XXVII. Setiap level
+                menantang pemain untuk memecahkan sistem keamanan, melacak jejak peretas, dan
+                menyusun strategi dengan motto <em class="text-cyan-300 font-semibold">"Think First"</em> — berpikir dulu sebelum
+                bertindak. Visualnya didominasi nuansa biru gelap dengan elemen neon khas
+                terminal hacker.
             </p>
-        </div>
-
-        {{-- ================= KARAKTER A — ARKA ================= --}}
-        <div class="mt-14 grid items-center gap-10 md:grid-cols-2">
-            <div>
-                <span class="mb-2 inline-block text-[11px] uppercase tracking-widest text-violet-300">Protagonist</span>
-                <h3 class="text-2xl font-bold text-white">Karakter A — Arka</h3>
-                <p class="mt-2 text-sm text-gray-400">
-                    Karakter utama dengan elemen cahaya. Simbolnya adalah
-                    <strong class="text-cyan-300">segitiga bercahaya</strong> yang mewakili keberanian.
-                    Merchandise bertema Arka didominasi warna hijau neon dan elemen garis tajam,
-                    sesuai dengan desain armor-nya di dalam game.
-                </p>
-            </div>
-            <img
-                src="{{ asset('images/karakter-arka.png') }}"
-                alt="Karakter Arka - We've Been Hacked"
-                class="mx-auto h-52 w-full max-w-sm rounded-2xl border border-white/10 object-cover"
-            >
-        </div>
-
-        {{-- ================= MERCHANDISE ARKA ================= --}}
-        <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-
-            {{-- Card 1 --}}
-            <div class="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1.5 hover:border-cyan-400">
-                <img
-                    src="{{ asset('images/merch-kaos-arka.jpg') }}"
-                    alt="Kaos Light of Arka"
-                    class="h-32 w-full object-cover"
-                >
-                <div class="p-4">
-                    <h4 class="text-sm font-semibold text-white">Kaos "Light of Arka"</h4>
-                    <p class="mt-1 text-xs text-gray-400">Desain segitiga bercahaya di dada, warna hijau neon.</p>
-                    <span class="mt-3 inline-block rounded-full bg-white/10 px-3 py-1 text-[10px] tracking-widest text-cyan-300">ARKA SERIES</span>
-                </div>
-            </div>
-
-            {{-- Card 2 --}}
-            <div class="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1.5 hover:border-cyan-400">
-                <img
-                    src="{{ asset('images/merch-keychain-arka.jpg') }}"
-                    alt="Keychain Segitiga Arka"
-                    class="h-32 w-full object-cover"
-                >
-                <div class="p-4">
-                    <h4 class="text-sm font-semibold text-white">Keychain Segitiga Arka</h4>
-                    <p class="mt-1 text-xs text-gray-400">Logam dengan ukiran simbol karakter Arka.</p>
-                    <span class="mt-3 inline-block rounded-full bg-white/10 px-3 py-1 text-[10px] tracking-widest text-cyan-300">ARKA SERIES</span>
-                </div>
-            </div>
-
-            {{-- Card 3 --}}
-            <div class="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1.5 hover:border-cyan-400">
-                <img
-                    src="{{ asset('kittchen.jpeg') }}"
-                    alt="Poster Arka Full Art"
-                    class="h-32 w-full object-cover"
-                >
-                <div class="p-4">
-                    <h4 class="text-sm font-semibold text-white">Poster Arka Full Art</h4>
-                    <p class="mt-1 text-xs text-gray-400">Ilustrasi resmi Arka dalam pose pertarungan.</p>
-                    <span class="mt-3 inline-block rounded-full bg-white/10 px-3 py-1 text-[10px] tracking-widest text-cyan-300">ARKA SERIES</span>
-                </div>
-            </div>
-        </div>
-
-        {{-- ================= KETERANGAN KAITAN ================= --}}
-        <div class="mt-8 rounded-r-lg border-l-4 border-cyan-400 bg-white/5 px-6 py-4 text-sm italic text-gray-300">
-            💡 <strong class="not-italic text-cyan-300">Kaitan dengan game:</strong>
-            Simbol segitiga pada kaos & keychain Arka adalah tanda yang muncul di atas kepala Arka
-            saat mengaktifkan skill ultimate di dalam game.
         </div>
 
     </div>

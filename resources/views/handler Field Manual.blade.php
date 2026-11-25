@@ -1,0 +1,202 @@
+@extends('layouts.app')
+
+@section('title', "Handler Field Manual - We've Been Hacked")
+
+@section('content')
+<section class="bg-[#0b1a33] px-6 text-white min-h-screen" style="padding-top:140px; padding-bottom:80px;">
+    <div class="mx-auto max-w-6xl">
+        {{-- Tempel semua isi HTML manual kamu di sini --}}
+        <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Handler Field Manual – OH NO We've been tracked</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#f6efdc;--card:#fffaf0;--ink:#3b3228;--mut:#7a6d5c;--line:#e2d8bc;--e:#3485cf;--h:#6a35a8;--x:#c98f0a;--red:#d9503f;--grn:#4f9a3f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f2a4a;--card:#17395f;--ink:#f3ecd8;--mut:#a9b8cc;--line:#2c5282;--e:#5aa5ea;--h:#a77be0;--x:#f4c027}}
+:root[data-theme="dark"]{--bg:#0f2a4a;--card:#17395f;--ink:#f3ecd8;--mut:#a9b8cc;--line:#2c5282;--e:#5aa5ea;--h:#a77be0;--x:#f4c027}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:14px}
+header{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--e);color:#fff;border-radius:14px;padding:12px 16px}
+header b{flex:1;min-width:190px;font-size:1.1rem;letter-spacing:.5px}
+button{font:inherit;cursor:pointer}
+header button{background:#fff3;color:#fff;border:1px solid #fff8;border-radius:8px;padding:6px 12px}
+header button.pdf{background:#fff;color:#1c4f85;font-weight:700}
+.steps{display:flex;gap:6px;margin:12px 0;overflow-x:auto;padding-bottom:4px}
+.steps button{flex:1;min-width:110px;border:2px solid var(--c);background:transparent;color:var(--ink);border-radius:12px;padding:8px 6px;font-size:.85rem;line-height:1.25}
+.steps button small{display:block;color:var(--c);font-weight:700;font-size:.7rem}
+.steps button.on{background:var(--c);color:#fff}.steps button.on small{color:#fff}
+.steps button.done::after{content:" ✓"}
+.e{--c:var(--e)}.h{--c:var(--h)}.x{--c:var(--x)}
+.bar{height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin-bottom:12px}.bar i{display:block;height:100%;width:0;background:var(--grn);transition:width .3s}
+.pg{display:none}.pg.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:12px 0}
+h2{margin:0 0 4px;font-size:1.5rem}h3{margin:0 0 6px;color:var(--c,var(--e));font-size:1.15rem}
+.chip{display:inline-block;border-radius:999px;padding:1px 12px;color:#fff;background:var(--c);font-size:.8rem;vertical-align:middle}
+.pill{display:inline-block;border-radius:999px;padding:1px 12px;color:#fff;font-weight:700}.bad{background:var(--red)}.ok{background:var(--grn)}
+ol,ul{margin:6px 0;padding-left:22px}li{margin:3px 0}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:420px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--mut);font-weight:400;font-size:.85rem}
+.say{display:flex;gap:8px;margin:5px 0}.say b{flex:0 0 76px;font-size:.8rem;border-radius:8px;color:#fff;text-align:center;padding:2px 0;height:fit-content}
+.say .a{background:var(--e)}.say .m{background:var(--x)}
+.tool label{display:flex;gap:10px;padding:4px 0;cursor:pointer}.tool input[type=checkbox]{width:22px;height:22px;accent-color:var(--e);flex:none}
+.tool input[type=text]{width:100%;padding:9px 12px;font:inherit;font-size:1.15rem;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.res{margin-top:10px;padding:10px;border-radius:12px;color:#fff;font-size:1.2rem;text-align:center;font-weight:700}
+.cols{display:flex;gap:8px;margin-bottom:8px}.cols button{flex:1;padding:9px;border:0;border-radius:10px;color:#fff;opacity:.5;text-transform:uppercase}.cols button.sel{opacity:1;outline:3px solid var(--ink)}
+.big{font-size:2.2rem;text-align:center;margin:4px 0}
+.mut{color:var(--mut);font-size:.9rem}.warn{border-left:5px solid var(--red)}.tip{border-left:5px solid var(--grn)}
+.nav{display:flex;gap:10px;justify-content:space-between;margin:16px 0}
+.nav button{padding:11px 20px;border-radius:12px;border:0;background:var(--e);color:#fff}.nav button:disabled{opacity:.35}
+.q{font-size:1.25rem;margin:8px 0}.ans{display:flex;gap:10px}.ans button{flex:1;padding:12px;border:0;border-radius:12px;color:#fff;font-weight:700;font-size:1.1rem}
+.cover{display:none}
+@media print{
+ @page{size:A4;margin:13mm}
+ :root{--bg:#fff;--card:#fff;--ink:#000;--line:#bbb;--mut:#444;--e:#1f6db3;--h:#5a2a94;--x:#9a6b00}
+ body{font-size:12.5px}header,.steps,.bar,.nav,.tool,.noprint{display:none!important}
+ .cover{display:block;break-after:page;text-align:center;padding-top:60mm}.cover h1{font-size:34px;margin:0}.cover p{font-size:15px}
+ .pg{display:block!important;break-before:page}.pg.noprint{display:none!important}.cover+.wrap .pg:first-of-type{break-before:auto}
+ .card{break-inside:avoid;margin:7px 0;padding:8px 12px}table{min-width:0}
+ .chip,.pill,.say b,.res{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="cover"><h1>HANDLER FIELD MANUAL</h1><p><b>OH NO · We've been tracked</b><br>Buku Panduan Modul – Co-op 2 pemain</p><p>Analyst main di PC · Handler memegang buku ini<br><b>Jangan perlihatkan buku ini ke Analyst!</b></p><p class="mut">Level 01 Easy: Phishing Triage + Firewall Breach · Level 02 Hard: Spear Phishing</p></div>
+<div class="wrap">
+<header><b>🕵️ HANDLER FIELD MANUAL</b><button id="theme">Tema</button><button class="pdf" id="pdf">⬇ Export PDF</button></header>
+<div class="steps" id="steps"></div><div class="bar"><i id="prog"></i></div>
+
+<section class="pg x" id="p0">
+ <h2>Persiapan <span class="chip">UMUM</span></h2>
+ <p class="mut">Mulai dari sini. Baca 2 menit, lalu lanjut ke misi sesuai level.</p>
+ <div class="two">
+  <div class="card e"><h3>🖥️ ANALYST (PC)</h3><ul><li>Melihat layar game.</li><li>Membacakan email, hasil Detector, atau daftar koneksi.</li><li>Menekan keputusan. <b>Tidak punya aturan.</b></li></ul></div>
+  <div class="card x"><h3>📘 HANDLER (kamu)</h3><ul><li>Memegang buku ini (kertas / laptop lain).</li><li><b>Tidak boleh melihat layar.</b></li><li>Bertanya, menghitung, memberi keputusan: <b>BLOCK</b> atau <b>TRUST</b>.</li></ul></div>
+ </div>
+ <div class="card"><h3>Aturan emas</h3><ol><li>Jangan intip layar. Semua info lewat suara.</li><li>Tanya <b>satu hal per pertanyaan</b>, jawaban pendek: YA / TIDAK / angka.</li><li>Ulangi angka dan IP sebelum memutuskan: "Konfirmasi, 10.4.9.201, benar?"</li><li>3 keputusan salah = <b>SYSTEM BREACHED</b> (game over). Lebih baik tanya ulang daripada menebak.</li></ol></div>
+ <div class="card"><h3>Peta level</h3><div class="tw"><table><thead><tr><th>Level</th><th>Misi</th><th>Waktu</th></tr></thead><tbody>
+  <tr><td><span class="chip e">EASY</span></td><td>Misi 1 Phishing Triage → Misi 2 Firewall Breach (5 koneksi)</td><td>05:00</td></tr>
+  <tr><td><span class="chip h">HARD</span></td><td>Misi 3 Spear Phishing (terbuka setelah Easy selesai)</td><td>02:30</td></tr></tbody></table></div></div>
+ <div class="card"><h3>Contoh percakapan</h3>
+  <div class="say"><b class="m">HANDLER</b>Misi mulai. Baca pengirimnya.</div>
+  <div class="say"><b class="a">ANALYST</b>billing@nusatech-support.com</div>
+  <div class="say"><b class="m">HANDLER</b>Detector: domain age apa?</div>
+  <div class="say"><b class="a">ANALYST</b>NEW, IP BLACKLISTED.</div>
+  <div class="say"><b class="m">HANDLER</b>Total 7. BLOCK. Ulangi: BLOCK.</div></div>
+ <div class="card tool"><h3>Cek siap main</h3><label><input type="checkbox" class="ck">Analyst sudah membuka game & memilih level</label><label><input type="checkbox" class="ck">Layar Analyst tidak terlihat olehku</label><label><input type="checkbox" class="ck">Aku siap dengan buku ini (tabel Misi 1 &amp; 2)</label></div>
+</section>
+
+<section class="pg e" id="p1">
+ <h2>Misi 1 · Phishing Triage <span class="chip e">EASY</span></h2>
+ <div class="card"><h3>Cara kerja</h3><ol><li>Analyst membaca email dan hasil <b>Phishing Detector</b>.</li><li>Kamu tanya indikator di tabel satu per satu. Jawaban <b>YA</b> → tambah poin (bisa minus).</li><li>Total <b>≥ <span class="thr"></span></b> → <span class="pill bad">BLOCK</span>. Lebih kecil → <span class="pill ok">TRUST</span>.</li></ol></div>
+ <div class="card"><h3>Tabel indikator</h3><div class="tw"><table><thead><tr><th>Poin</th><th>Tanya ke Analyst</th></tr></thead><tbody class="flagRows"></tbody></table></div>
+  <p class="mut">Detector: IP REPUTATION = CLEAN / SUSPECT / BLACKLISTED · SSL = VALID / MISSING / INVALID · DOMAIN AGE = NEW (&lt;30 hari) / YOUNG / ESTABLISHED.</p></div>
+ <div class="card tool calc"><h3>Penghitung</h3><div class="checks"></div><div class="res"></div></div>
+ <div class="card tip"><b>Contoh:</b> domain NEW (+2), IP BLACKLISTED (+2), tiruan brand (+2), tenggat mendesak (+1) = 7 → BLOCK.</div>
+ <div class="card warn"><b>Salah yang sering:</b> lupa poin minus (domain nusatech.co.id PERSIS, IP CLEAN, domain ESTABLISHED). Email asli bisa total di bawah 0.</div>
+</section>
+
+<section class="pg e" id="p2">
+ <h2>Misi 2 · Firewall Breach <span class="chip e">EASY · 5 koneksi</span></h2>
+ <div class="card"><h3>Cara kerja</h3><ol><li>Analyst membaca <b>ID, IP, dan warna Type</b> tiap koneksi.</li><li>Cari warna di kartu → ambil <b>aksi dasar</b>.</li><li>Lihat <b>dua angka pertama IP</b> (10.4.x.x). Ada di daftar <b>PENGECUALIAN</b>? → <b>balik</b> aksinya (BLOCK ⇄ TRUST).</li></ol></div>
+ <div class="fwCards"></div>
+ <div class="card tool calc2"><h3>Kalkulator</h3><div class="cols"></div><input type="text" inputmode="decimal" placeholder="IP dari Analyst, mis. 10.4.9.201" autocomplete="off"><div class="res" style="display:none"></div></div>
+ <div class="card tip"><b>Contoh:</b> RED + 203.0.113.45 → dasar BLOCK, 203.0 ada di pengecualian RED → <b>TRUST</b>.</div>
+ <div class="card warn"><b>Awas:</b> 91.200 ≠ 91.20. Minta Analyst mengulang IP kalau ragu.</div>
+</section>
+
+<section class="pg h" id="p3">
+ <h2>Misi 3 · Spear Phishing <span class="chip h">HARD</span></h2>
+ <div class="card"><h3>Apa yang beda di Hard</h3><ul><li><b>Waktu 02:30</b>, jauh lebih singkat. Jangan bertele-tele.</li><li><b>Spear phishing:</b> email menyebut nama / jabatan, kelihatan meyakinkan.</li><li><b>CEO fraud:</b> pengirim meniru atasan. Poin −3 hanya jika domain <b>PERSIS</b> nusatech.co.id.</li><li><b>Link HTTPS dibajak:</b> https:// <u>bukan</u> tanda aman. Andalkan Detector (age, IP, SSL).</li></ul></div>
+ <div class="card"><h3>Urutan tanya cepat</h3><ol><li>Domain pengirim PERSIS nusatech.co.id? (−3)</li><li>Detector: DOMAIN AGE, IP REPUTATION (±2)</li><li>Tiruan brand / minta password, uang, file? (+2)</li><li>Sisanya: http, SSL, tenggat (+1)</li></ol><p class="mut">Pakai tabel poin yang sama dengan Misi 1. Batas tetap <b>≥ <span class="thr"></span> = BLOCK</b>.</p></div>
+ <div class="card tool calc"><h3>Penghitung</h3><div class="checks"></div><div class="res"></div></div>
+ <div class="card tip"><b>Strategi tim:</b> Analyst langsung membaca semua hasil Detector tanpa ditanya, Handler mencatat poin sambil mendengarkan.</div>
+</section>
+
+<section class="pg x" id="p4">
+ <h2>Lembar Ringkas <span class="chip">1 HALAMAN</span></h2>
+ <div class="card"><div class="big">Total ≥ <span class="thr"></span> → BLOCK · lebih kecil → TRUST</div><div class="tw"><table class="mini"></table></div></div>
+ <div class="card"><h3>Firewall</h3><div class="fwMini"></div></div>
+ <div class="card"><h3>Kata kunci radio</h3><ul><li><b>"Ulangi"</b> – minta Analyst membaca lagi</li><li><b>"Konfirmasi …"</b> – cek angka / IP sebelum memutuskan</li><li><b>"Total N, BLOCK/TRUST"</b> – keputusan akhir</li><li><b>"Stop"</b> – tahan, Handler sedang menghitung</li></ul></div>
+</section>
+
+<section class="pg x noprint" id="p5">
+ <h2>Latihan Cepat <span class="chip">5 SOAL</span></h2>
+ <p class="mut">Latihan sebelum main. Soal acak dari aturan di atas.</p>
+ <div class="card tool"><div id="dq"></div><div class="ans"><button class="bad" data-a="BLOCK">BLOCK</button><button class="ok" data-a="TRUST">TRUST</button></div><div class="res" id="dres" style="display:none"></div><p class="mut" id="dscore"></p><button id="dstart" style="padding:10px 18px;border-radius:10px;border:0;background:var(--x);color:#fff">Mulai latihan</button></div>
+</section>
+
+<div class="nav"><button id="prev">← Sebelumnya</button><span class="mut" id="pos"></span><button id="next">Lanjut →</button></div>
+<p class="mut noprint" style="text-align:center">Mau cetak? Tekan <b>Export PDF</b> (atau Ctrl/Cmd+P → Simpan sebagai PDF).</p>
+</div>
+
+<script>
+/* DATA = ManualGen.build_fixed() di game. Ubah di kedua tempat bila aturan berubah. */
+const THR=4;
+const FLAGS=[[3,"Link mengarah ke file unduhan (.exe)?"],[2,"Detector: DOMAIN AGE berlabel NEW (di bawah 30 hari)?"],[2,"Detector: IP REPUTATION berlabel BLACKLISTED?"],[2,"Findings Detector menyebut tiruan / lookalike / homograph / brand di subdomain?"],[2,"Email meminta password, login ulang, file sensitif, atau uang?"],[1,"Link diawali http:// (bukan https://)?"],[1,"Detector: SSL CERTIFICATE berlabel MISSING atau INVALID?"],[1,"Email menekan dengan tenggat / ancaman / kerahasiaan?"],[-2,"Detector: IP REPUTATION berlabel CLEAN?"],[-2,"Detector: DOMAIN AGE berlabel ESTABLISHED?"],[-3,"Domain pengirim PERSIS nusatech.co.id (bukan mirip)?"]];
+const FW={red:{base:"BLOCK",exc:["203.0","77.88"],c:"#e5594f"},blue:{base:"TRUST",exc:["91.200","142.250"],c:"#2a6fb8"},green:{base:"TRUST",exc:["172.16","104.18"],c:"#6f9a2f"}};
+const PAGES=[["Persiapan","x","UMUM"],["Misi 1 Phishing","e","EASY"],["Misi 2 Firewall","e","EASY"],["Misi 3 Spear Phish","h","HARD"],["Lembar Ringkas","x","CETAK"],["Latihan","x","UJI"]];
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],flip=a=>a=="BLOCK"?"TRUST":"BLOCK";
+const pt=p=>(p>0?"+":"")+p,fwAct=(c,ip)=>{const pf=ip.split(".").slice(0,2).join("."),ex=FW[c].exc.includes(pf);return[ex?flip(FW[c].base):FW[c].base,ex]};
+let store={};try{store=JSON.parse(localStorage.getItem("hfm")||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem("hfm",JSON.stringify(store))}catch(e){}};
+$$(".thr").forEach(e=>e.textContent=THR);
+const rows=FLAGS.map(f=>`<tr><td><b style="color:${f[0]>0?"var(--red)":"var(--grn)"}">${pt(f[0])}</b></td><td>${f[1]}</td></tr>`).join("");
+$$(".flagRows").forEach(e=>e.innerHTML=rows);
+$(".mini").innerHTML=FLAGS.map(f=>`<tr><td><b>${pt(f[0])}</b></td><td>${f[1]}</td></tr>`).join("");
+const fwHtml=Object.entries(FW).map(([k,v])=>`<div class="card" style="border:3px solid ${v.c}"><b style="color:${v.c};text-transform:uppercase">${k}</b> → dasar: <span class="pill ${v.base=="BLOCK"?"bad":"ok"}">${v.base}</span> &nbsp; Pengecualian (dibalik): <b>${v.exc.map(x=>x+".x.x").join(" &nbsp; ")}</b></div>`).join("");
+$(".fwCards").innerHTML=fwHtml;$(".fwMini").innerHTML=fwHtml;
+/* penghitung phishing (Misi 1 & 3) */
+$$(".calc").forEach(c=>{
+ $(".checks",c).innerHTML=FLAGS.map((f,i)=>`<label><input type="checkbox" data-i="${i}"><span><b>${pt(f[0])}</b> ${f[1]}</span></label>`).join("");
+ const run=()=>{let s=0;$$("input:checked",c).forEach(x=>s+=FLAGS[x.dataset.i][0]);const r=$(".res",c),b=s>=THR;r.className="res "+(b?"bad":"ok");r.textContent=`Total ${s} (batas ${THR}) → ${b?"BLOCK":"TRUST"}`};
+ c.addEventListener("change",run);run();
+});
+/* kalkulator firewall */
+(()=>{const c=$(".calc2");let col="red";
+ $(".cols",c).innerHTML=Object.keys(FW).map(k=>`<button data-k="${k}" style="background:${FW[k].c}" class="${k==col?"sel":""}">${k}</button>`).join("");
+ const inp=$("input",c),r=$(".res",c),run=()=>{const v=inp.value.trim(),p=v.split(".");if(!v||p.length<2||!p[1]){r.style.display="none";return}
+  const[a,ex]=fwAct(col,v);r.style.display="block";r.className="res "+(a=="BLOCK"?"bad":"ok");r.textContent=`[${col}] ${v} → ${a}${ex?" (pengecualian)":""}`};
+ $(".cols",c).onclick=e=>{if(e.target.dataset.k){col=e.target.dataset.k;$$(".cols button",c).forEach(b=>b.classList.toggle("sel",b.dataset.k==col));run()}};
+ inp.oninput=run})();
+/* stepper */
+let cur=Math.min(+store.cur||0,PAGES.length-1);
+$("#steps").innerHTML=PAGES.map((p,i)=>`<button class="${p[1]}" data-i="${i}"><small>${p[2]}</small>${i+1}. ${p[0]}</button>`).join("");
+function go(i){cur=Math.max(0,Math.min(PAGES.length-1,i));store.cur=cur;(store.seen=store.seen||{})[cur]=1;save();
+ $$(".pg").forEach((p,k)=>p.classList.toggle("on",k==cur));
+ $$("#steps button").forEach((b,k)=>{b.classList.toggle("on",k==cur);b.classList.toggle("done",!!store.seen[k]&&k!=cur)});
+ $("#prog").style.width=(Object.keys(store.seen).length/PAGES.length*100)+"%";
+ $("#pos").textContent=`${cur+1} / ${PAGES.length}`;$("#prev").disabled=cur==0;$("#next").disabled=cur==PAGES.length-1;
+ $("#steps button.on").scrollIntoView({block:"nearest",inline:"center"});scrollTo(0,0)}
+$("#steps").onclick=e=>{const b=e.target.closest("button");if(b)go(+b.dataset.i)};
+$("#prev").onclick=()=>go(cur-1);$("#next").onclick=()=>go(cur+1);
+$$(".ck").forEach((c,i)=>{c.checked=!!(store.ck||{})[i];c.onchange=()=>{(store.ck=store.ck||{})[i]=c.checked;save()}});
+/* latihan */
+let D={n:0,ok:0,q:null};const R=a=>a[Math.floor(Math.random()*a.length)],N=()=>1+Math.floor(Math.random()*254);
+function ask(){const q=$("#dq");$("#dres").style.display="none";
+ if(Math.random()<.5){const c=R(Object.keys(FW)),pool=["192.168","10.4","172.16","203.0","91.200","77.88","142.250","104.18","10.0","45.33"],
+  pf=Math.random()<.5?R(FW[c].exc):R(pool.filter(x=>!FW[c].exc.includes(x))),ip=`${pf}.${N()}.${N()}`;
+  D.q={a:fwAct(c,ip)[0]};q.innerHTML=`<div class="q"><b>Firewall</b> · warna <b style="color:${FW[c].c}">${c.toUpperCase()}</b> · IP <b>${ip}</b></div>`}
+ else{const k=[...FLAGS.keys()].sort(()=>Math.random()-.5).slice(0,3+Math.floor(Math.random()*3));let s=0;k.forEach(i=>s+=FLAGS[i][0]);
+  D.q={a:s>=THR?"BLOCK":"TRUST"};q.innerHTML=`<div class="q"><b>Phishing</b> · jawaban Analyst <b>YA</b> untuk:<ul>${k.map(i=>`<li>${FLAGS[i][1]}</li>`).join("")}</ul></div>`}
+ $("#dscore").textContent=`Soal ${D.n+1} / 5 · benar ${D.ok}`}
+$("#dstart").onclick=()=>{D.n=0;D.ok=0;$(".ans").style.display="flex";ask()};
+$(".ans").onclick=e=>{const a=e.target.dataset.a;if(!a||!D.q)return;const r=$("#dres"),good=a==D.q.a;D.n++;if(good)D.ok++;
+ r.style.display="block";r.className="res "+(good?"ok":"bad");r.textContent=good?"Benar!":"Salah – jawabannya "+D.q.a;D.q=null;
+ setTimeout(()=>{if(D.n<5)ask();else{$("#dq").innerHTML=`<div class="big">${D.ok==5?"S":D.ok>=4?"A":"B"}</div>`;$("#dscore").textContent=`Skor ${D.ok} / 5. ${D.ok==5?"Handler siap tempur!":"Ulangi sampai S."}`;r.style.display="none"}},1100)};
+$("#dq").innerHTML='<div class="q">Tekan <b>Mulai latihan</b>.</div>';
+/* PDF & tema */
+$("#pdf").onclick=()=>{try{print()}catch(e){alert("Tekan Ctrl/Cmd+P lalu pilih Simpan sebagai PDF")}};
+$("#theme").onclick=()=>{const d=document.documentElement,dk=getComputedStyle(d).getPropertyValue("--bg").trim()=="#0f2a4a";d.dataset.theme=dk?"light":"dark"};
+go(cur);
+</script>
+</body>
+</html>
+
+    </div>
+</section>
+@endsection

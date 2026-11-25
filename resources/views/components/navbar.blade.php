@@ -5,43 +5,47 @@
         {{-- LOGO GAMBAR --}}
         <a href="{{ url('/') }}" class="flex items-center gap-2">
             <img src="{{ asset('Logo.png') }}" 
-                 alt="We've Been Hacked Logo" 
-                 class="h-10 w-auto">
-            {{-- Opsional: tambahkan teks di samping logo jika ingin --}}
+                alt="We've Been Hacked Logo" 
+                class="h-10 w-auto">
             
             <span class="text-xl font-black uppercase tracking-wider text-white">
                 We've Been
                 <span class="text-[#d4a832]">Hacked!</span>
             </span>
-            
         </a>
 
         {{-- MENU --}}
         <div class="flex items-center gap-8">
 
             <a href="{{ url('/') }}"
-               class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
+            class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
                 Home
             </a>
 
             <a href="{{ url('/about') }}"
-               class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
+            class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
                 About Game
             </a>
 
             <a href="{{ url('/how-to-play') }}"
-               class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
+            class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
                 How To Play
             </a>
 
             <a href="{{ url('/gallery') }}"
-               class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
+            class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
                 Gallery
             </a>
 
-            <a href="{{ url('/team') }}"
-               class="text-sm font-semibold uppercase tracking-wider transition hover:text-[#e8c84a]">
-                Team
+            {{-- HANDLER MANUAL (MENGARAH KE RUTE LARAVEL TANPA SPASI) --}}
+            <a href="{{ url('/handler-manual') }}" 
+               class="text-gray-300 hover:text-cyan-400 px-3 py-2 text-sm font-semibold transition-colors duration-200">
+               Handler Manual
+            </a>
+
+            <a href="{{ url('/leaderboard') }}" 
+               class="text-gray-300 hover:text-cyan-400 px-3 py-2 text-sm font-medium transition-colors duration-200">
+               Leaderboard
             </a>
 
         </div>
